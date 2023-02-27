@@ -1,0 +1,165 @@
+\documentclass{beamer}
+\usepackage{ctex,tcolorbox,color,xcolor}
+\usepackage[ruled]{algorithm2e}
+\usepackage{hyperref}
+\hypersetup{hidelinks,
+	colorlinks=true,
+    linkcolor=blue,
+	urlcolor=cyan,
+	pdfstartview=Fit,
+	breaklinks=true}
+
+\usetheme{Malmoe}
+\usecolortheme{dolphin}
+\usefonttheme{serif}
+
+\title{Writing Papers With \LaTeX{}}
+\subtitle{基于\LaTeX{}的论文写作快速入门}
+\author{Yao Zhengji}
+\date{\today}
+\institute{NEU}
+
+
+\begin{document}
+
+\frame{\maketitle}
+
+\begin{frame} 
+    \frametitle{\LaTeX{}简介} 
+    \begin{itemize} 
+        \item \LaTeX{}是一款基于\TeX{}的专业排版软件
+        \item 相比于Word这样“所见即所得”的文字处理软件来说，\LaTeX{}属于编程实现。即tex文件是源代码，pdf文件是编译结果。
+        \item 为什么学习/使用\LaTeX{}？
+        \begin{itemize}
+            \item \LaTeX{}可以便捷、清晰、美观地展示出公式、编号、引用等内容
+            \item 大量科研会议、期刊投稿要求\LaTeX{}文件
+        \end{itemize}
+    \end{itemize} 
+\end{frame}
+
+\begin{frame}
+    \frametitle{目录}
+    \tableofcontents
+\end{frame}
+
+\begin{frame} 
+    \frametitle{快速开始:Overleaf} 
+    \begin{itemize} 
+        \item \href{https://cn.overleaf.com/}{Overleaf官网}（支持中文）
+        \item 在线的\LaTeX{}编译器
+        \item 优点：无需配置环境；可跨设备查看、编译；
+        \item 缺点：必须在有良好网络的环境使用；编译速度较慢；可能出现难以调试的bug
+    \end{itemize} 
+\end{frame}
+
+\begin{frame} 
+    \frametitle{本地的环境配置} 
+    \begin{itemize} 
+        \item 本地\LaTeX{}编译环境
+        \begin{itemize}
+            \item 进入\href{https://www.latex-project.org/}{\LaTeX{}官网}，在其中的Get页面可以根据系统不同下载不同的环境安装包。一般安装包为iso文件，如果是Win10以上系统，直接运行即可
+            \item 推荐使用TeXLive，其扩展较全，避免后续再下载扩展包的麻烦，如果流量告急，可以先用MikTex
+            \item TeXLive文件约4G，如下载较慢，可以在\href{https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/}{镜像站}下载
+        \end{itemize}  
+        \item 本地\LaTeX{}编辑器
+        \begin{itemize}
+            \item 推荐使用\href{https://code.visualstudio.com/}{VSCode}，功能非常丰富，且可用于处理诸多其他文件类型
+        \end{itemize}
+        \item 优点：本地编译；编辑器可自定义程度较高
+        \item 缺点：配置过程较为复杂（配置过程可参见下一页）
+    \end{itemize} 
+\end{frame}
+
+\begin{frame} 
+    \frametitle{VSCode的配置} 
+    \begin{itemize} 
+        \item 在VSCode的扩展页面中安装LaTeX Workshop插件，在打开tex文件后，可以直接编译（快捷键为Ctrl+Alt+B）
+        \item 如果编译不通过，可能是编译设置问题，可以直接在“Build LaTeX project”菜单中选择{xelatex$\rightarrow$biber$\rightarrow$xelatex*2}
+        \item 当前版本的VSCode可以直接左右分标签页来分别浏览tex文件与pdf文件，故不必安装SumatraPDF
+        \item VSCode推荐设置：
+        \begin{itemize}
+            \item 设置中可以勾选Editor: Word Wrap，开启自动换行
+            \item 设置-主题中可以更改界面配色与关键词高亮配色（需要主题支持\LaTeX{}），笔者使用的是Noctis主题的Hibernus配色
+            \item 设置中可以找到latex-workshop.latex.autoBuild.run，其中可以设置是否在保存时编译（可以每次Ctrl+S保存时自动更新pdf内容）
+        \end{itemize}
+    \end{itemize} 
+\end{frame}
+
+
+\begin{frame} 
+    \frametitle{文档模板的应用} 
+    \begin{itemize} 
+        \item 不建议从空文档开始论文写作，尽量从模板开始
+        \item Overleaf的Template页面有大量免费模板，可以在初开始写作时应用
+        \begin{itemize}
+            \item Overleaf的模板可以在打开后，从左上角的菜单内选择下载源码到本地，即可实现线上转本地编辑
+        \end{itemize}
+        \item 在确定投稿目标后，即可在对应的期刊/会议的网站上下载到其所要求的模板
+    \end{itemize} 
+\end{frame}
+
+\begin{frame} 
+    \frametitle{标题与作者} 
+    \begin{itemize} 
+        \item 在已经应用模板的情况下，修改$\backslash$author中的作者名和$\backslash$authormark中的作者信息即可
+        \item $\backslash$author中作者名后的大括号内填写数字代表第几作者，填写星号代表通信作者
+    \end{itemize} 
+\end{frame}
+
+\begin{frame} 
+    \frametitle{公式} 
+    \begin{itemize} 
+        \item \LaTeX{}中常用的公式有两种形式：行内公式与行间公式
+        \item 行内公式在两侧各加一个\$即可，行间公式需要两侧各加两个\$
+        \item 两侧各加两个\$的方法可能导致编译问题，使用行间公式时建议左侧加$\backslash$[右侧加$\backslash$]
+        \item 在公式结尾加$\backslash$tag{XXX}可以给公式编号
+        \item \[a=b+c \tag*{5.1}\]
+        \item 如果想在文字中间插入符号，最好左右各添\$符号以确保显示正常
+        \item 如果公式较复杂，可使\href{https://latex.codecogs.com/eqneditor/editor.php?lang=zh-cn}{在线公式编辑器}
+    \end{itemize} 
+\end{frame}
+
+\begin{frame} 
+    \frametitle{图片} 
+    \begin{itemize} 
+        \item 插入一个图片的命令一般以{$\backslash$begin{figure}[!h]}，以$\backslash$end{figure}结束
+        \item 常用$\backslash$centering居中图片，用$\backslash$label增加图片标签
+        \item 在使用模板的情况下，一般只需要输入图片文件名
+        \item 所有插入图片应在同一文件夹中，如果图片和tex文件不在同一路径下，须在开头用graphicspath命令指定路径
+    \end{itemize} 
+\end{frame}
+
+\begin{frame} 
+    \frametitle{表格} 
+    \begin{itemize} 
+        \item 不建议使用\LaTeX{}命令制表
+        \item 直接使用Excel制表，之后使用\href{https://tableconvert.com/}{TableConvert}进行转化即可
+        \item TableConvert转化过程中也可继续编辑
+    \end{itemize} 
+\end{frame}
+
+\begin{frame} 
+    \frametitle{引用} 
+    \begin{itemize} 
+        \item 可以在文档中直接书写引用，或使用BibTex
+        \item 如果直接书写，以begin{thebibliography}{99}开头，以end{thebibliography}结尾即可。中间插入bibitem{XXX}YYY，其中XXX为引用时的标签，YYY为文章与作者信息
+        \item 如果使用BibTex，在参考文献处直接写bibliographystyle{plain}和bibliography{ref}即可
+        \item 在文中引用时，输入cite{XXX}
+        \item 一般不需要对着论文名称和作者名称手敲引用，将想要引用的文章名在谷歌学术搜索，只要是能搜到的文章都可一键引用
+    \end{itemize} 
+\end{frame}
+
+\begin{frame} 
+    \frametitle{更详细的参考} 
+    \begin{itemize} 
+        \item \href{https://zhuanlan.zhihu.com/p/38178015}{本地安装与配置过程}
+        \item \href{https://zhuanlan.zhihu.com/p/67182742}{使用Overleaf}
+        \item \href{https://blog.csdn.net/NSJim/article/details/109045914}{公式}
+        \item \href{https://blog.csdn.net/qq_31347869/article/details/103832190}{图片}
+        \item \href{https://blog.csdn.net/juechenyi/article/details/77116011}{表格}
+        \item \href{https://ctan.org/tex-archive/info/lshort/chinese}{较全面的\LaTeX{}指南}（建议下载保存）
+    \end{itemize} 
+\end{frame}
+
+
+\end{document}
