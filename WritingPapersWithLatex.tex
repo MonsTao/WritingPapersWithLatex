@@ -112,17 +112,17 @@
         \item \LaTeX{}中常用的公式有两种形式：行内公式与行间公式
         \item 行内公式在两侧各加一个\$即可，行间公式需要两侧各加两个\$
         \item 两侧各加两个\$的方法可能导致编译问题，使用行间公式时建议左侧加$\backslash$[右侧加$\backslash$]
-        \item 在公式结尾加$\backslash$tag{XXX}可以给公式编号
+        \item 在公式结尾加$\backslash$tag\{XXX\}可以给公式编号
         \item \[a=b+c \tag*{5.1}\]
         \item 如果想在文字中间插入符号，最好左右各添\$符号以确保显示正常
-        \item 如果公式较复杂，可使\href{https://latex.codecogs.com/eqneditor/editor.php?lang=zh-cn}{在线公式编辑器}
+        \item 如果需要可视化地编辑公式，可使用Word编辑公式后复制公式粘贴进\LaTeX编辑页面，一般会自动粘贴为公式代码（不要忘记加符号）。或使用\href{https://latex.codecogs.com/eqneditor/editor.php?lang=zh-cn}{在线公式编辑器}
     \end{itemize} 
 \end{frame}
 
 \begin{frame} 
     \frametitle{图片} 
     \begin{itemize} 
-        \item 插入一个图片的命令一般以{$\backslash$begin{figure}[!h]}，以$\backslash$end{figure}结束
+        \item 插入一个图片的命令一般以{$\backslash$begin\{figure\}[!h]}，以$\backslash$end\{figure\}结束
         \item 常用$\backslash$centering居中图片，用$\backslash$label增加图片标签
         \item 在使用模板的情况下，一般只需要输入图片文件名
         \item 所有插入图片应在同一文件夹中，如果图片和tex文件不在同一路径下，须在开头用graphicspath命令指定路径
@@ -134,7 +134,7 @@
     \begin{itemize} 
         \item 不建议使用\LaTeX{}命令制表
         \item 直接使用Excel制表，之后使用\href{https://tableconvert.com/}{TableConvert}进行转化即可
-        \item TableConvert转化过程中也可继续编辑
+        \item TableConvert的页面上也可继续编辑
     \end{itemize} 
 \end{frame}
 
@@ -142,9 +142,9 @@
     \frametitle{引用} 
     \begin{itemize} 
         \item 可以在文档中直接书写引用，或使用BibTex
-        \item 如果直接书写，以begin{thebibliography}{99}开头，以end{thebibliography}结尾即可。中间插入bibitem{XXX}YYY，其中XXX为引用时的标签，YYY为文章与作者信息
+        \item 如果直接书写，以begin\{thebibliography\}\{99\}开头，以end\{thebibliography\}结尾即可。中间插入bibitem\{XXX\}YYY，其中XXX为引用时的标签，YYY为文章与作者信息
         \item 如果使用BibTex，在参考文献处直接写bibliographystyle{plain}和bibliography{ref}即可
-        \item 在文中引用时，输入cite{XXX}
+        \item 在文中引用时，输入cite\{XXX\}
         \item 一般不需要对着论文名称和作者名称手敲引用，将想要引用的文章名在谷歌学术搜索，只要是能搜到的文章都可一键引用
     \end{itemize} 
 \end{frame}
