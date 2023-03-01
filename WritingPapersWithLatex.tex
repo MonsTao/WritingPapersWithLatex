@@ -1,4 +1,4 @@
-\documentclass{beamer}
+\documentclass[xetex,mathserif,serif]{beamer}
 \usepackage{ctex,tcolorbox,color,xcolor}
 \usepackage[ruled]{algorithm2e}
 \usepackage{hyperref}
@@ -9,9 +9,10 @@
 	pdfstartview=Fit,
 	breaklinks=true}
 
-\usetheme{Malmoe}
-\usecolortheme{dolphin}
-\usefonttheme{serif}
+\usetheme{easy}
+%\usetheme{MSzeged}
+%\usecolortheme{dolphin}
+%\usefonttheme{serif}
 
 \title{Writing Papers With \LaTeX{}}
 \subtitle{基于\LaTeX{}的论文写作快速入门}
@@ -42,6 +43,7 @@
     \tableofcontents
 \end{frame}
 
+\section{无需配置的快速开始}
 \begin{frame} 
     \frametitle{快速开始:Overleaf} 
     \begin{itemize} 
@@ -52,6 +54,7 @@
     \end{itemize} 
 \end{frame}
 
+\section{本地安装与配置}
 \begin{frame} 
     \frametitle{本地的环境配置} 
     \begin{itemize} 
@@ -85,7 +88,7 @@
     \end{itemize} 
 \end{frame}
 
-
+\section{应用文档模板}
 \begin{frame} 
     \frametitle{文档模板的应用} 
     \begin{itemize} 
@@ -98,6 +101,7 @@
     \end{itemize} 
 \end{frame}
 
+\section{输入标题与作者}
 \begin{frame} 
     \frametitle{标题与作者} 
     \begin{itemize} 
@@ -106,6 +110,7 @@
     \end{itemize} 
 \end{frame}
 
+\section{插入公式与图表}
 \begin{frame} 
     \frametitle{公式} 
     \begin{itemize} 
@@ -115,7 +120,7 @@
         \item 在公式结尾加$\backslash$tag\{XXX\}可以给公式编号
         \item \[a=b+c \tag*{5.1}\]
         \item 如果想在文字中间插入符号，最好左右各添\$符号以确保显示正常
-        \item 如果需要可视化地编辑公式，可使用Word编辑公式后复制公式粘贴进\LaTeX编辑页面，一般会自动粘贴为公式代码（不要忘记加符号）。或使用\href{https://latex.codecogs.com/eqneditor/editor.php?lang=zh-cn}{在线公式编辑器}
+        \item 如果需要可视化地编辑公式，可使用Word编辑公式后复制公式粘贴进\LaTeX{}编辑页面，一般会自动粘贴为公式代码（不要忘记加符号）。或使用\href{https://latex.codecogs.com/eqneditor/editor.php?lang=zh-cn}{在线公式编辑器}
     \end{itemize} 
 \end{frame}
 
@@ -138,6 +143,7 @@
     \end{itemize} 
 \end{frame}
 
+\section{插入引用}
 \begin{frame} 
     \frametitle{引用} 
     \begin{itemize} 
@@ -149,6 +155,7 @@
     \end{itemize} 
 \end{frame}
 
+\section{其他参考资料}
 \begin{frame} 
     \frametitle{其他参考} 
     \begin{itemize} 
